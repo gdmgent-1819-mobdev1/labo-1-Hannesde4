@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>binaire klok</title>
+    <link rel="stylesheet" href="css/binary.css">
+</head>
+<body>
+    <div id="binary-clock" class="app"></div>
+</body>
+<script src="js/clock_binary.js"></script>
+<script>
+        (function(){
+            const clock = new BinaryClock('binary-clock',32);
+            clock.start(1000);
+        })();
+    </script>
+</html>

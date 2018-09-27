@@ -1,0 +1,14 @@
+.blanco, .kleur{
+    width:25px;
+    height:25px;
+    display:inline-block;
+    margin:-2px 0;
+}
+
+.blanco{
+    background: white;
+}
+
+.kleur{
+    background: grey;
+}
