@@ -14,7 +14,7 @@ xhr.onload = function() {
 
 function parkingStates(){
   let parkings = JSON.parse(xhr.responseText);
-  console.log("If I can see this, everything is ok!");
+  console.log("If you can see this, everything is ok!");
   for (i = 0; i < 5; i++){
     let parkFree = parkings[i]['parkingStatus']['availableCapacity'];
     let parkMax = parkings[i]['parkingStatus']['totalCapacity'];
