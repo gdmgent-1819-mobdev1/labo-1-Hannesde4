@@ -15,7 +15,7 @@ xhr.onload = function() {
 function parkingStates(){
   let parkings = JSON.parse(xhr.responseText);
   console.log("If you can see this, everything is ok!");
-  for (i = 0; i < 5; i++){
+  for (i = 0; i < 6; i++){
     let parkFree = parkings[i]['parkingStatus']['availableCapacity'];
     let parkMax = parkings[i]['parkingStatus']['totalCapacity'];
    //console.log(parkings[i]);
@@ -24,21 +24,25 @@ function parkingStates(){
    //als er minder dan 20% vrije parking is, dan wordt de achtergrond rood
     if(parkFree < parkMax/5){
       //console.log("rood");
-      document.getElementById('container').innerHTML += '<div class="parkings" style="background-color:orange;"> <h3>' + (parkings[i]['name'] + '</h3></div>');
-    
+      document.getElementById('container').innerHTML += '<div class="parkings" style="background-color:red;"> <h3>' + (parkings[i]['name'] + '</h3></div>');
+      let parkTest = parkings;
+
     
       //als er minder dan 50% vrije parking is, dan wordt de achtergrond oranje
     }else if(parkFree < parkMax/2){
       //console.log("oranje");
-      document.getElementById('container').innerHTML += '<div class="parkings" style="background-color:red;"> <h3>' + (parkings[i]['name'] + '</h3></div>');
-    
+      document.getElementById('container').innerHTML += '<div class="parkings" style="background-color:orange;"> <h3>' + (parkings[i]['name'] + '</h3></div>');
+      let parkTest = parkings;
+
     
       //als voorgaande if statements niet van toepassing waren, dan wordt de achtergrond kleur groen
     }else{
       //console.log("groen");
       document.getElementById('container').innerHTML += '<div class="parkings" style="background-color:green;"> <h3>' + (parkings[i]['name'] + '</h3></div>');
+      let parkTest = parkings;
     };
-    //console.log(parkFree + " from " + parkMax + " =" + parkFree/parkMax);
+    console.log(parkFree + " from " + parkMax + " =" + parkFree/parkMax);
     
   }
+  //let storedVar = localStorage.setItem(park);
 };
